@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec: 
+  replicas: 2 
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: server
+          image: eu.gcr.io/surfschool-finder/server:977337dcb126c45864e0ccf7a459847037107641
+          ports:
+            - containerPort: 8081
+          env:
+            - name: DB_SELECTION
+              value: "memory"
+            - name: NODE_ENV
+              value: "development"
+
+      imagePullSecrets:
+        - name: gcr-json-key

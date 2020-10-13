@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: eu.gcr.io/surfschool-finder/client:46223de5fec9b237fb6fefe73f2975094800c3c9
+          ports:
+            - containerPort: 10230
+      imagePullSecrets:
+        - name: gcr-json-key
+        
