@@ -15,15 +15,21 @@
 
 - After docker image has been built and pushed to Container Registry (with latest as the tag), take following steps:
 
-    - Get IP address of your local K8S cluster
+
+
+
+- Get IP address of your local K8S cluster
+
 
 ```bash
 minikube ip
 ```
-    
-   - Copy the IP address in env variable, NEXT_PUBLIC_MINIKUBE_IP at deployment config of client service
 
-   - Make sure you have Google Container Registry secret created and add the name of the secret in imagePullSecrets field in deployment config
+    
+- Copy the IP address in env variable, NEXT_PUBLIC_MINIKUBE_IP at deployment config of client service
+
+
+- Make sure you have Google Container Registry secret created and add the name of the secret in imagePullSecrets field in deployment config
    
 
 - Your client-deployment config file should look something like below:
