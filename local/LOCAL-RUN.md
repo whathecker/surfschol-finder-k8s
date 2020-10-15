@@ -20,11 +20,11 @@
 ```bash
 minikube ip
 ```
-- Copy the IP address in env variable, NEXT_PUBLIC_MINIKUBE_IP at deployment config of client service
+    - Copy the IP address in env variable, NEXT_PUBLIC_MINIKUBE_IP at deployment config of client service
 
     - Make sure you have Google Container Registry secret created and add the name of the secret in imagePullSecrets field in deployment config
 
-    - Your client-deployment config file should look something like below:
+- Your client-deployment config file should look something like below:
 
 ```yaml
 apiVersion: apps/v1
