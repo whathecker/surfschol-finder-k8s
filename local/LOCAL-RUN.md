@@ -13,19 +13,56 @@
 
     - At local cluster, developer need to ensure the latest tag name on Container Registery actually contains the latest source code, therefore building and pushing the image locally is required
 
-- After docker image has been built and pushed to Container Registry (with latest as a tag), run following:
+- After docker image has been built and pushed to Container Registry (with latest as the tag), take following steps:
+
+    - Get IP address of your local K8S cluster
+
+```bash
+minikube ip
+```
+    - Copy the IP address in env variable, NEXT_PUBLIC_MINIKUBE_IP at deployment config of client service
+
+    - Make sure you have Google Container Registry secret created and add the name of the secret in imagePullSecrets field in deployment config
+
+- Your client-deployment config file should look something like below:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: eu.gcr.io/surfschool-finder/client:latest
+          ports:
+            - containerPort: 10230
+          env:
+            - name: NEXT_PUBLIC_EXE_CTX
+              value: "minikube"
+            - name: NEXT_PUBLIC_MINIKUBE_IP
+              value: 192.168.64.3
+      imagePullSecrets:
+        - name: gcr-json-key
+        
+```
+
+- Finally run below command and visit your minikube ip address on web browser
 
 ```bash
 kubectl apply -f local
 ```
 
-- Get IP address of your local K8S cluster
 
-```bash
-minikube ip
-```
-
-- Open your browser and access the IP address shown in previous step
 
 
 

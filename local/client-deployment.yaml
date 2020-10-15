@@ -14,9 +14,14 @@ spec:
     spec:
       containers:
         - name: client
-          image: eu.gcr.io/surfschool-finder/client:46223de5fec9b237fb6fefe73f2975094800c3c9
+          image: eu.gcr.io/surfschool-finder/client:latest
           ports:
             - containerPort: 10230
+          env:
+            - name: NEXT_PUBLIC_EXE_CTX
+              value: "minikube"
+            - name: NEXT_PUBLIC_MINIKUBE_IP
+              value: 192.168.64.3
       imagePullSecrets:
         - name: gcr-json-key
         
