@@ -17,4 +17,7 @@ spec:
           image: eu.gcr.io/surfschool-finder/client:latest
           ports:
             - containerPort: 10230
+          env:
+            - name: NEXT_PUBLIC_EXE_CTX
+              value: "production"
         
