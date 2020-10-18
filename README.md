@@ -2,8 +2,8 @@
 
 This project stores Kubernetes configurations for Surf School Finder
 
-## Repositirory structure of Surf School Finder
-Surf School Finder is a multi-repo project 
+## Services
+Surf School Finder is a multi-repo project which consists of below services
 
 - Frontend: [repo](https://github.com/chok-chok/surfschool-finder-frontend)
 
