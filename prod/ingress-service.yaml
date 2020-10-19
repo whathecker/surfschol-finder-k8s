@@ -4,7 +4,7 @@ metadata:
   name: ingress-service
   annotations:
     kubernetes.io/ingress.class: "gce"
-    kubernetes.io/ingress.global-static-ip-name: prod-ip-static
+    kubernetes.io/ingress.global-static-ip-name: static-prod-ipaddress 
     networking.gke.io/managed-certificates: findsurfschool-cert
 spec:
   rules:
