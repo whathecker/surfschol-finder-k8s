@@ -18,7 +18,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: prod    # Your GKE cluter name
+  GKE_CLUSTER: prod-1    # Your GKE cluter name
   GKE_ZONE: europe-west4-a   # Your GKE zone
 
 jobs:
