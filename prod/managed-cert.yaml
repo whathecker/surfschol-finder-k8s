@@ -1,0 +1,16 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: findsurfschool-cert
+spec:
+  domains:
+    - findsurfschool.com
+    - www.findsurfschool.com
+    - api.findsurfschool.com
+    - test.api.findsurfschool.com
+    - test.findsurfschool.com
+    - partner.findsurfschool.com
+    - staging.findsurfschool.com
+    - staging.api.findsurfschool.com
+
+
