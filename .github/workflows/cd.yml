@@ -49,5 +49,5 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        kubectl apply -f prod
+        kubectl apply -f prod --force
         kubectl get services -o wide
