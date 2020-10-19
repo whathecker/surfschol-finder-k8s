@@ -50,5 +50,5 @@ jobs:
     - name: Deploy
       run: |-
         kubectl replace --force -f prod/managed-cert.yaml
-        kubectl apply -f prod
+        kubectl apply --force -f prod
         kubectl get services -o wide
