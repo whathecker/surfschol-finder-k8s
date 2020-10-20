@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: eu.gcr.io/surfschool-finder/server:latest
+          image: eu.gcr.io/surfschool-finder/server:8e2b83c4b544d135f2d6548c63410902c78fcd21
           ports:
             - containerPort: 8081
           env:
