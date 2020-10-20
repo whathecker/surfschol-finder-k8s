@@ -49,6 +49,5 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        kubectl replace --force -f prod/managed-cert.yaml
-        kubectl apply --force -f prod
+        kubectl apply -f prod
         kubectl get services -o wide
