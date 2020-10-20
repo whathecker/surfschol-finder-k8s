@@ -8,13 +8,16 @@ metadata:
     networking.gke.io/managed-certificates: findsurfschool-cert
 spec:
   rules:
-    - http:
+    - host: "api.findsurfschool.com"
+      http:
         paths:
-          - path: /api/*
+          - path: /*
             pathType: Prefix
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 8081
+    - http:
+        path:
           - path: /*
             pathType: Prefix
             backend:
