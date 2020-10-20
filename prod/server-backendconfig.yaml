@@ -8,6 +8,6 @@ spec:
     timeoutSec: 10
     healthyThreshold: 3
     unhealthyThreshold: 3
-    type: HTTPS
+    type: HTTP
     requestPath: /health
-    port: 443
+    port: 80
