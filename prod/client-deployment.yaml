@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: eu.gcr.io/surfschool-finder/client:36c8ca6a03a12e235de34e935cb91116a6045002
+          image: eu.gcr.io/surfschool-finder/client:latest
           ports:
             - containerPort: 10230
           env:
