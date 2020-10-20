@@ -15,7 +15,7 @@ spec:
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 8081
-          - path: /
+          - path: /*
             pathType: Prefix
             backend:
               serviceName: client-cluster-ip-service
