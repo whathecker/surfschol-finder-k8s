@@ -6,11 +6,7 @@ spec:
   domains:
     - findsurfschool.com
     - www.findsurfschool.com
-    - api.findsurfschool.com
-    - test.api.findsurfschool.com
-    - test.findsurfschool.com
     - partner.findsurfschool.com
-    - staging.findsurfschool.com
-    - staging.api.findsurfschool.com
+    - api.findsurfschool.com
 
 
