@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: leads-deployment
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      component: leads
+  template:
+    metadata:
+      labels:
+        component: leads
+    spec:
+      containers:
+        - name: leads
+          image: eu.gcr.io/surfschool-finder/leads:latest
+          ports:
+            - containerPort: 9000
+          env:
+            - name: NODE_ENV
+              value: "development"
+      imagePullSecrets:
+        - name: gcr-json-key
