@@ -9,6 +9,8 @@ Surf School Finder is a multi-repo project which consists of below services
 
 - Server: [repo](https://github.com/chok-chok/surfschool-finder-server)
 
+- Leads: [repo](https://github.com/chok-chok/surfschool-finder-leads)
+
 ## Release to production
 CI pipeline of this repo releases the change to production cluster at each merge and push on master branch of each service
 
