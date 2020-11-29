@@ -9,5 +9,5 @@ spec:
     healthyThreshold: 3
     unhealthyThreshold: 3
     type: HTTP
-    requestPath: /health
+    requestPath: /leadservice/health
     port: 80
