@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: leads-deployment
 spec: 
-  replicas: 2
+  replicas: 2 
   selector:
     matchLabels:
       component: leads
@@ -19,6 +19,4 @@ spec:
             - containerPort: 9000
           env:
             - name: DEPLOYMENT_ENV
-              value: "dev"
-      imagePullSecrets:
-        - name: gcr-json-key
+              value: "prod"

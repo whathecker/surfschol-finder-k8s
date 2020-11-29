@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: leads-cluster-ip-service
+  annotations:
+    cloud.google.com/backend-config: '{"ports": {"80":"leads-backendconfig"}}'
+    cloud.google.com/neg: '{"ingress": true}'
+
+spec:
+  type: ClusterIP
+  selector:
+    component: leads
+  ports:
+    - port: 9000
+      targetPort: 9000

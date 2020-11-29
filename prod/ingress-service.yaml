@@ -16,6 +16,11 @@ spec:
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 8081
+          - path: /leadservice/*
+            pathType: Prefix
+            backend:
+              serviceName: leads-cluster-ip-service
+              servicePort: 9000
     - http:
         paths:
           - path: /*
